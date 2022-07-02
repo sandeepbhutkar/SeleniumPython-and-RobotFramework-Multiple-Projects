@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.4 on win32)" generated="20200526 14:49:59.818" rpa="false">
+<suite id="s1" name="OS Operations" source="C:\Users\san\PycharmProjects\Practice\tests\OS_Operations.robot">
+<test id="s1-t1" name="Create Directory">
+<kw name="Create File" library="OperatingSystem">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>C:/Users/san/PycharmProjects/Practice/Sandeep2/file1.txt</arg>
+<arg>Hello</arg>
+</arguments>
+<msg timestamp="20200526 14:49:59.907" level="INFO" html="yes">Created file '&lt;a href="file://C:\Users\san\PycharmProjects\Practice\Sandeep2\file1.txt"&gt;C:\Users\san\PycharmProjects\Practice\Sandeep2\file1.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200526 14:49:59.905" endtime="20200526 14:49:59.908"></status>
+</kw>
+<status status="PASS" starttime="20200526 14:49:59.904" endtime="20200526 14:49:59.908" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200526 14:49:59.821" endtime="20200526 14:49:59.910"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="OS Operations">OS Operations</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

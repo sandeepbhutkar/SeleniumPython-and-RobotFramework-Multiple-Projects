@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.4 on win32)" generated="20200510 16:30:47.192" rpa="false">
+<suite id="s1" name="Xml" source="C:\Users\san\PycharmProjects\Assessment\tests\xml.robot">
+<test id="s1-t1" name="TC001: Get the count of root element">
+<kw name="Parse Xml" library="XML">
+<doc>Parses the given XML file or string into an element structure.</doc>
+<arguments>
+<arg>Data/menu.xml</arg>
+</arguments>
+<assign>
+<var>${xml_obj}</var>
+</assign>
+<msg timestamp="20200510 16:30:47.272" level="INFO">${xml_obj} = &lt;Element 'breakfast_menu' at 0x027065D0&gt;</msg>
+<status status="PASS" starttime="20200510 16:30:47.272" endtime="20200510 16:30:47.272"></status>
+</kw>
+<kw name="Get Element Count" library="XML">
+<doc>Returns and logs how many elements the given ``xpath`` matches.</doc>
+<arguments>
+<arg>${xml_obj}</arg>
+<arg>./</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20200510 16:30:47.272" level="INFO">12 elements matched './'.</msg>
+<msg timestamp="20200510 16:30:47.272" level="INFO">${count} = 12</msg>
+<status status="PASS" starttime="20200510 16:30:47.272" endtime="20200510 16:30:47.272"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>count of root element is : ${count}</arg>
+</arguments>
+<status status="PASS" starttime="20200510 16:30:47.272" endtime="20200510 16:30:47.272"></status>
+</kw>
+<status status="PASS" starttime="20200510 16:30:47.272" endtime="20200510 16:30:47.282" critical="yes"></status>
+</test>
+<test id="s1-t2" name="TC002:What is name of root element">
+<kw name="Parse Xml" library="XML">
+<doc>Parses the given XML file or string into an element structure.</doc>
+<arguments>
+<arg>Data/menu.xml</arg>
+</arguments>
+<assign>
+<var>${xml_obj}</var>
+</assign>
+<msg timestamp="20200510 16:30:47.282" level="INFO">${xml_obj} = &lt;Element 'breakfast_menu' at 0x02713810&gt;</msg>
+<status status="PASS" starttime="20200510 16:30:47.282" endtime="20200510 16:30:47.282"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${xml_obj.tag}</arg>
+<arg>breakfast_menu</arg>
+</arguments>
+<status status="PASS" starttime="20200510 16:30:47.282" endtime="20200510 16:30:47.282"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${xml_obj.tag}</arg>
+</arguments>
+<status status="PASS" starttime="20200510 16:30:47.282" endtime="20200510 16:30:47.282"></status>
+</kw>
+<status status="PASS" starttime="20200510 16:30:47.282" endtime="20200510 16:30:47.282" critical="yes"></status>
+</test>
+<test id="s1-t3" name="TC003:How many ‘food’ elements are present?">
+<kw name="Parse Xml" library="XML">
+<doc>Parses the given XML file or string into an element structure.</doc>
+<arguments>
+<arg>D:/Python/menu.xml</arg>
+</arguments>
+<assign>
+<var>${xml_obj}</var>
+</assign>
+<msg timestamp="20200510 16:30:47.282" level="INFO">${xml_obj} = &lt;Element 'breakfast_menu' at 0x0271EC30&gt;</msg>
+<status status="PASS" starttime="20200510 16:30:47.282" endtime="20200510 16:30:47.292"></status>
+</kw>
+<kw name="Get Element Count" library="XML">
+<doc>Returns and logs how many elements the given ``xpath`` matches.</doc>
+<arguments>
+<arg>${xml_obj}</arg>
+<arg>.//food</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20200510 16:30:47.292" level="INFO">7 elements matched './/food'.</msg>
+<msg timestamp="20200510 16:30:47.292" level="INFO">${count} = 7</msg>
+<status status="PASS" starttime="20200510 16:30:47.292" endtime="20200510 16:30:47.292"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>number of ‘food’ elements present are : ${count}</arg>
+</arguments>
+<status status="PASS" starttime="20200510 16:30:47.292" endtime="20200510 16:30:47.292"></status>
+</kw>
+<status status="PASS" starttime="20200510 16:30:47.282" endtime="20200510 16:30:47.292" critical="yes"></status>
+</test>
+<test id="s1-t4" name="TC004:Check first food item ‘Name’">
+<kw name="Parse Xml" library="XML">
+<doc>Parses the given XML file or string into an element structure.</doc>
+<arguments>
+<arg>D:/Python/menu.xml</arg>
+</arguments>
+<assign>
+<var>${xml_obj}</var>
+</assign>
+<msg timestamp="20200510 16:30:47.292" level="INFO">${xml_obj} = &lt;Element 'breakfast_menu' at 0x02727CC0&gt;</msg>
+<status status="PASS" starttime="20200510 16:30:47.292" endtime="20200510 16:30:47.292"></status>
+</kw>
+<kw name="Get Element Text" library="XML">
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<arguments>
+<arg>${xml_obj}</arg>
+<arg>.//food[1]/name</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20200510 16:30:47.292" level="INFO">${name} = Belgian Waffles</msg>
+<status status="PASS" starttime="20200510 16:30:47.292" endtime="20200510 16:30:47.292"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>Belgian Waffles</arg>
+</arguments>
+<status status="PASS" starttime="20200510 16:30:47.292" endtime="20200510 16:30:47.292"></status>
+</kw>
+<status status="PASS" starttime="20200510 16:30:47.292" endtime="20200510 16:30:47.292" critical="yes"></status>
+</test>
+<test id="s1-t5" name="TC005:Check first food item ‘Price’">
+<kw name="Parse Xml" library="XML">
+<doc>Parses the given XML file or string into an element structure.</doc>
+<arguments>
+<arg>D:/Python/menu.xml</arg>
+</arguments>
+<assign>
+<var>${xml_obj}</var>
+</assign>
+<msg timestamp="20200510 16:30:47.302" level="INFO">${xml_obj} = &lt;Element 'breakfast_menu' at 0x02727C00&gt;</msg>
+<status status="PASS" starttime="20200510 16:30:47.302" endtime="20200510 16:30:47.302"></status>
+</kw>
+<kw name="Get Element Text" library="XML">
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<arguments>
+<arg>${xml_obj}</arg>
+<arg>.//food[1]/price</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200510 16:30:47.302" level="INFO">${price} = $5.95</msg>
+<status status="PASS" starttime="20200510 16:30:47.302" endtime="20200510 16:30:47.302"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${price}</arg>
+<arg>$5.95</arg>
+</arguments>
+<status status="PASS" starttime="20200510 16:30:47.302" endtime="20200510 16:30:47.302"></status>
+</kw>
+<status status="PASS" starttime="20200510 16:30:47.302" endtime="20200510 16:30:47.302" critical="yes"></status>
+</test>
+<test id="s1-t6" name="TC006:Check first food item ‘Calories’">
+<kw name="Parse Xml" library="XML">
+<doc>Parses the given XML file or string into an element structure.</doc>
+<arguments>
+<arg>D:/Python/menu.xml</arg>
+</arguments>
+<assign>
+<var>${xml_obj}</var>
+</assign>
+<msg timestamp="20200510 16:30:47.312" level="INFO">${xml_obj} = &lt;Element 'breakfast_menu' at 0x0271EC90&gt;</msg>
+<status status="PASS" starttime="20200510 16:30:47.302" endtime="20200510 16:30:47.312"></status>
+</kw>
+<kw name="Get Element Text" library="XML">
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<arguments>
+<arg>${xml_obj}</arg>
+<arg>.//food[1]/calories</arg>
+</arguments>
+<assign>
+<var>${cal}</var>
+</assign>
+<msg timestamp="20200510 16:30:47.312" level="INFO">${cal} = 650</msg>
+<status status="PASS" starttime="20200510 16:30:47.312" endtime="20200510 16:30:47.312"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${cal}</arg>
+<arg>650</arg>
+</arguments>
+<status status="PASS" starttime="20200510 16:30:47.312" endtime="20200510 16:30:47.312"></status>
+</kw>
+<status status="PASS" starttime="20200510 16:30:47.302" endtime="20200510 16:30:47.312" critical="yes"></status>
+</test>
+<test id="s1-t7" name="TC007:Add values in xml">
+<kw name="Parse Xml" library="XML">
+<doc>Parses the given XML file or string into an element structure.</doc>
+<arguments>
+<arg>Data/menu.xml</arg>
+</arguments>
+<assign>
+<var>${xml_obj}</var>
+</assign>
+<msg timestamp="20200510 16:30:47.312" level="INFO">${xml_obj} = &lt;Element 'breakfast_menu' at 0x027138D0&gt;</msg>
+<status status="PASS" starttime="20200510 16:30:47.312" endtime="20200510 16:30:47.312"></status>
+</kw>
+<kw name="Add Element" library="XML">
+<doc>Adds a child element to the specified element.</doc>
+<arguments>
+<arg>${xml_obj}</arg>
+<arg>&lt;food&gt;&lt;/food&gt;</arg>
+</arguments>
+<status status="PASS" starttime="20200510 16:30:47.312" endtime="20200510 16:30:47.312"></status>
+</kw>
+<kw name="Add Element" library="XML">
+<doc>Adds a child element to the specified element.</doc>
+<arguments>
+<arg>${xml_obj}</arg>
+<arg>&lt;name&gt;French Fry&lt;/name&gt;</arg>
+<arg>xpath=food[7]</arg>
+</arguments>
+<status status="PASS" starttime="20200510 16:30:47.312" endtime="20200510 16:30:47.312"></status>
+</kw>
+<kw name="Add Element" library="XML">
+<doc>Adds a child element to the specified element.</doc>
+<arguments>
+<arg>${xml_obj}</arg>
+<arg>&lt;price&gt;5.45&lt;/price&gt;</arg>
+<arg>xpath=food[7]</arg>
+</arguments>
+<status status="PASS" starttime="20200510 16:30:47.312" endtime="20200510 16:30:47.322"></status>
+</kw>
+<kw name="Add Element" library="XML">
+<doc>Adds a child element to the specified element.</doc>
+<arguments>
+<arg>${xml_obj}</arg>
+<arg>&lt;description&gt;French Fryadd something&lt;/description&gt;</arg>
+<arg>xpath=food[7]</arg>
+</arguments>
+<status status="PASS" starttime="20200510 16:30:47.322" endtime="20200510 16:30:47.322"></status>
+</kw>
+<kw name="Add Element" library="XML">
+<doc>Adds a child element to the specified element.</doc>
+<arguments>
+<arg>${xml_obj}</arg>
+<arg>&lt;calories&gt;150&lt;/calories&gt;</arg>
+<arg>xpath=food[7]</arg>
+</arguments>
+<status status="PASS" starttime="20200510 16:30:47.322" endtime="20200510 16:30:47.322"></status>
+</kw>
+<kw name="Save Xml" library="XML">
+<doc>Saves the given element to the specified file.</doc>
+<arguments>
+<arg>${xml_obj}</arg>
+<arg>Data/menu.xml</arg>
+</arguments>
+<msg timestamp="20200510 16:30:47.322" level="INFO" html="yes">XML saved to &lt;a href="file://C:\Users\san\PycharmProjects\Assessment\Data\menu.xml"&gt;C:\Users\san\PycharmProjects\Assessment\Data\menu.xml&lt;/a&gt;.</msg>
+<status status="PASS" starttime="20200510 16:30:47.322" endtime="20200510 16:30:47.322"></status>
+</kw>
+<status status="PASS" starttime="20200510 16:30:47.312" endtime="20200510 16:30:47.322" critical="yes"></status>
+</test>
+<test id="s1-t8" name="TC008: Varify if value got added">
+<kw name="Element Should Exist" library="XML">
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<arguments>
+<arg>Data/menu.xml</arg>
+<arg>food[9]</arg>
+</arguments>
+<msg timestamp="20200510 16:30:47.322" level="INFO">1 element matched 'food[9]'.</msg>
+<status status="PASS" starttime="20200510 16:30:47.322" endtime="20200510 16:30:47.322"></status>
+</kw>
+<status status="PASS" starttime="20200510 16:30:47.322" endtime="20200510 16:30:47.332" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200510 16:30:47.192" endtime="20200510 16:30:47.332"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0">Critical Tests</stat>
+<stat pass="8" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="8" fail="0" id="s1" name="Xml">Xml</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200510 16:30:47.182" level="WARN">Collapsing consecutive whitespace during parsing is deprecated. Fix ' Library' in file 'C:\Users\san\PycharmProjects\Assessment\tests\xml.robot' on line 2.</msg>
+</errors>
+</robot>

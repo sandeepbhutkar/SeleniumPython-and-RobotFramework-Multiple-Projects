@@ -1,0 +1,1 @@
+robot -d results Tests/*.robot
