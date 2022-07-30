@@ -22,5 +22,5 @@ wait=WebDriverWait(driver,60)
 element=wait.until(EC.element_to_be_clickable((By.ID,"rewards-0-VIP")))
 element.click()
 
-WebDriverWait(driver,20).until(expected_condition.element=wait.until(EC.element_to_be_clickable((By.ID,"rewards-0-VIP"))))
+#WebDriverWait(driver,20).until(expected_condition.element=wait.until(EC.element_to_be_clickable((By.ID,"rewards-0-VIP"))))
 
